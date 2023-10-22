@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2ExamenC.Views.PageListPerson"
+             xmlns:conver="clr-namespace:PM2ExamenC.Controllers">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Ver Mapa" Clicked="ToolbarItem_Clicked_3"/>
+
+        <ToolbarItem Text="Texto Por Voz" Clicked="ToolbarItem_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <conver:ByteArrayImage x:Key="ByteArray" />
+    </ContentPage.Resources>
+
+  
+
+    <ContentPage.Content>
+
+        <CollectionView x:Name="list"
+                          SelectionMode="Single"
+                          SelectionChanged="list_SelectionChanged">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="15">
+                </LinearItemsLayout>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0"
+                               x:Name="image"
+                               Source="{Binding foto,Converter={StaticResource ByteArray}}" WidthRequest="70" HeightRequest="70"/>
+
+                        <Label Grid.Column="1" Text="{Binding lactitudes}"/>
+
+                        <Label Grid.Column="2" Text="{Binding longitudes}"/>
+
+                        <Label Grid.Column="3" Text="{Binding descripciones}"/>
+                        
+                        <StackLayout>
+                            <Button x:Name="btneliminar" Text="Eliminar" CommandParameter="{Binding .}" Clicked="btneliminar_Clicked"/>
+                        </StackLayout>
+
+                    </Grid>
+                    
+
+                </DataTemplate>
+                
+            </CollectionView.ItemTemplate>
+            
+
+        </CollectionView>
+            
+        
+    </ContentPage.Content>
+    
+
+</ContentPage>

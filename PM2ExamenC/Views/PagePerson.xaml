@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2ExamenC.Views.PagePerson">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ver lista de Sitios" Clicked="ToolbarItem_Clicked"/>
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        
+      
+        
+        <StackLayout>
+
+            <Image x:Name="foto" WidthRequest="100" HeightRequest="200"/>
+
+            <Button x:Name="btnfoto" Text="Capturar Imagen" Clicked="btnfoto_Clicked"/>
+
+            <Entry Keyboard="Text" Placeholder="Indique su Lactitude" x:Name="txtlatitude"/>
+
+            <Entry Keyboard="Text" Placeholder="Indique su Longitud" x:Name="txtlongitud"/>
+
+
+            <Entry Keyboard="Text" Placeholder="Ingrese su Descripcion" x:Name="txtdescripcion"/>
+
+            <Button x:Name="btnproceso" Text="Agregar" Clicked="btnproceso_Clicked"/>
+
+            <Button x:Name="btnsalir" Text="Salir App" Clicked="btnsalir_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
